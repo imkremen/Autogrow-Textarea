@@ -46,6 +46,7 @@ jQuery.fn.autoGrow = function() {
 		mirror.style.fontFamily = jQuery(this).css('font-family');
 		mirror.style.fontSize = jQuery(this).css('font-size');
 		mirror.style.lineHeight = jQuery(this).css('line-height');
+		mirror.style.fontWeight = jQuery(this).css('font-weight');
 
 		// Style the textarea
 		this.style.overflow = "hidden";
