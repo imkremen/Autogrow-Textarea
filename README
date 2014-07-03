@@ -1,3 +1,10 @@
+Updated (03.07.2014)
+Support for IE<9 dropped.
+Support for mouse input added (copy>past)
+Bug fixes.
+
+//////////////////////////////////////////////////////////////
+
 This is the Official github repo of the Autogrow Textarea Plugin.
 
 You may want to read my full blog post here :
