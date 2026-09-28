@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Генератор силянки</title>
+    <meta name="description" content="Випадкові, але впорядковані схеми силянки (бісерна сітка): фризові групи, раппорт, палітри OKLCH, коди Preciosa 10/0." />
+    <script type="module" crossorigin src="./assets/index-oL5zYc5V.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CRA7f1ee.css">
+  </head>
+  <body>
+    <header class="top">
+      <h1>Генератор силянки</h1>
+      <button id="new" class="primary" type="button">Нова прикраса</button>
+      <button id="reference" type="button" title="Намисто чорний/бордо/золото з фіксованими параметрами">Референс</button>
+      <div class="seed">
+        <label for="seed-input">Seed</label>
+        <input id="seed-input" inputmode="numeric" autocomplete="off" spellcheck="false" />
+        <button id="seed-open" type="button">Показати</button>
+        <button id="seed-copy" type="button" title="Копіювати посилання з seed і параметрами">Копіювати</button>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="params" aria-label="Параметри">
+        <h2>Параметри</h2>
+        <label>Тип
+          <select id="p-type"></select>
+        </label>
+        <label>Бісерин між вузлами (k)
+          <select id="p-k">
+            <option value="1">1</option>
+            <option value="2" selected>2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+        </label>
+        <label>Раппортів (0 — авто)
+          <input id="p-rapports" type="number" min="0" max="30" value="0" />
+        </label>
+        <label>Палітра
+          <select id="p-palette"></select>
+        </label>
+        <label>Група симетрії
+          <select id="p-symmetry"></select>
+        </label>
+        <label>Складність: <output id="p-complexity-out">3</output>
+          <input id="p-complexity" type="range" min="1" max="5" value="3" />
+        </label>
+        <fieldset>
+          <legend>Заморозити шари обраної схеми</legend>
+          <div id="p-freeze"></div>
+          <p class="hint">Позначені шари лишаються як в обраній схемі, коли натискаєте «Нова прикраса».</p>
+        </fieldset>
+      </aside>
+
+      <main>
+        <section id="gallery" class="gallery" aria-label="Варіанти"></section>
+        <section id="detail" class="detail" hidden>
+          <div class="detail-head">
+            <h2 id="d-title"></h2>
+            <div id="d-meta" class="meta"></div>
+          </div>
+          <div class="canvas-wrap"><canvas id="d-canvas"></canvas></div>
+          <div class="toolbar">
+            <label><input id="d-threads" type="checkbox" checked /> нитки</label>
+            <label><input id="d-rapport" type="checkbox" /> раппорт</label>
+            <label>масштаб <input id="d-scale" type="range" min="3" max="14" value="7" /></label>
+            <span class="spacer"></span>
+            <button id="x-png" type="button">PNG</button>
+            <button id="x-svg" type="button">SVG</button>
+            <button id="x-json" type="button">JSON</button>
+            <button id="x-sylianka" type="button" title="Трафарет для binyachovo.github.io/sylianka">.sylianka.json</button>
+          </div>
+          <div id="d-report" class="report"></div>
+          <h3>Мотиви окремо</h3>
+          <div id="d-motifs" class="motifs"></div>
+          <h3>Бісер</h3>
+          <div class="reserve">
+            <label>Запас
+              <select id="d-reserve">
+                <option value="0">0 %</option>
+                <option value="10" selected>10 %</option>
+                <option value="20">20 %</option>
+                <option value="30">30 %</option>
+              </select>
+            </label>
+          </div>
+          <div id="d-stats"></div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
